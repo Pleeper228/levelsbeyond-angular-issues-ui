@@ -15,7 +15,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.github.com/repos/angular/angular/issues')
+    let lastWeek = new Date()
+    lastWeek.setDate(lastWeek.getDate() - 7)
+    fetch(`https://api.github.com/repos/angular/angular/issues?since=${lastWeek.toISOString()}`)
       .then(res => res.json())
       .then(res => {
         this.setState({
