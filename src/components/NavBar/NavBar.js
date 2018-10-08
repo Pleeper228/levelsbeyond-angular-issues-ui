@@ -14,9 +14,9 @@ class NavBar extends React.Component {
       <header className='navbar'>
         <div className='navbar-top'></div>
         <div className='navbar-container container'>
-          <Link to='/' className='nav-logo'>
+          <a href='https://www.reachengine.com/' target='_blank' rel='noopener noreferrer' className='nav-logo'>
             <img className='nav-logo-img' src='./reach_engine_logo.jpg' alt='reach engine logo'/>
-          </Link>
+          </a>
           <nav className='nav-container'>
             <ul className='right-nav-items'>
               {this.buildLink('/', 'Issues')}
