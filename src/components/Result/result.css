@@ -29,7 +29,7 @@
 }
 .x {
   color: #fff;
-  background-color: red;
+  background-color: #00aeef;
   height: 100%;
   padding: 5px;
   border-radius: 5px;
@@ -48,6 +48,5 @@
   overflow-wrap: break-word;
 }
 .issue div:nth-child(2) pre {
-  overflow-x: auto;
   overflow-y: hidden;
 }
