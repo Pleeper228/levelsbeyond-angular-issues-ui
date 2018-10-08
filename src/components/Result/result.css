@@ -1,6 +1,10 @@
 .issue {
-  padding: 10px;
   border-top: 1px solid #f6f8fa;
+  padding: 10px;
+}
+.issue-header:hover {
+  color: #0366d6;
+  cursor: pointer;
 }
 .issue:hover {
   background-color: #f6f8fa;
@@ -13,10 +17,6 @@
   display: inline-block;
   font-weight: bold;
   margin: 5px 0 0 0;
-}
-.issue-title:hover {
-  color: #0366d6;
-  cursor: pointer;
 }
 .issue-subtitle {
   font-size: 12px;

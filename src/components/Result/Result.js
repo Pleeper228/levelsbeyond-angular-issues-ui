@@ -11,7 +11,10 @@ class Result extends React.Component {
     this.toggleActive = this.toggleActive.bind(this)
   }
 
-  toggleActive() {
+  toggleActive(e) {
+    if (e.target.nodeName === 'A') {
+      return
+    }
     this.setState({
       active: !this.state.active
     })
@@ -20,13 +23,15 @@ class Result extends React.Component {
   render() {
     return (
       <div className='issue'>
-        <div className='issue-header'>
+        <div className='issue-header' onClick={this.toggleActive}>
           <div>
-            <p className='issue-title' onClick={this.toggleActive}>{this.props.issue.title}</p>
+            <div>
+              <p className='issue-title'>{this.props.issue.title} — </p>
+              <a className='blue' target='_blank' rel='noopener noreferrer' href={this.props.issue.html_url}> View on GitHub ⇲</a>
+            </div>
             <p className='issue-subtitle'>#{this.props.issue.number} updated on {this.props.issue.updated_at} by <a className='username' href={this.props.issue.user.html_url} target='_blank' rel="noopener noreferrer">{this.props.issue.user.login}</a></p>
-            <a className='' href={this.props.issue.html_url}>Link to PR on GitHub</a>
+
           </div>
-          { this.state.active ? <p className='x' onClick={this.toggleActive}>X</p> : null }
         </div>
         { this.state.active ? <Markdown markdown={this.props.issue.body} /> : null }
       </div>
