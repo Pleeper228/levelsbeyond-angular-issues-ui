@@ -1,26 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+import Results from './components/Results'
+import About from './components/About'
+import {HashRouter as Router, Route} from 'react-router-dom'
+import ScrollToTop from './ScrollToTop'
+import './app.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      issues: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('https://api.github.com/repos/angular/angular/issues')
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          issues: res
+        })
+      })
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <ScrollToTop>
+          <div className='app'>
+            <Route path='/' component={NavBar} />
+            <Route exact path='/' component={() => <Results issues={this.state.issues}/>} />
+            <Route path='/about' component={About} />
+            <Route path='/' component={Footer} />
+          </div>
+        </ScrollToTop>
+      </Router>
     );
   }
 }

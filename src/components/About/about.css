@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  text-align: center;
+  height: 80px;
+  align-items: center;
+  background-color: #222;
+  margin-top: 50px;
+}
+.legal {
+  color: #666;
+}
+@media (max-width: 1054px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
