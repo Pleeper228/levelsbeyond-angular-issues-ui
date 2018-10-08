@@ -5,7 +5,6 @@ import Results from './components/Results'
 import About from './components/About'
 import {HashRouter as Router, Route} from 'react-router-dom'
 import ScrollToTop from './ScrollToTop'
-import './app.css';
 
 class App extends Component {
   constructor(props) {

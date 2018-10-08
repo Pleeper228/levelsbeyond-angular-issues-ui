@@ -57,6 +57,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+	height: 100%;
 }
 
 code {
@@ -73,7 +74,15 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
-
+html {
+	height: 100%;
+}
+#root {
+	height: 100%;
+}
+.app {
+	height: 100%;
+}
 .container {
 	width: 80%;
 	margin: auto;
