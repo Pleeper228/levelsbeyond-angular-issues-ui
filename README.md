@@ -1,6 +1,6 @@
-# Notes React app
+# Angular Issues React app
 
-How to start the Notes application
+How to start the Angular Issues application
 ---
 
 1. Run `npm install` to download dependencies
